@@ -1,14 +1,14 @@
 var net = require("net");
-//var strftime = require("strttime")
+var strftime = require("strftime")
 var portNumber = process.argv[2];
 
 var date = new Date()
 
-var Y = date.getFullYear('YYYY');
-var m = date.getMonth('mm');
-var d = date.getDate('dd');
-var H = date.getHours('HH');
-var M = date.getMinutes('MM');
+var Y = date.getFullYear(strftime('%Y'));
+var m = date.getMonth(strftime('%m'));
+var d = date.getDate(strftime('%d'));
+var H = date.getHours(strftime('%H'));
+var M = date.getMinutes(strftime('M'));
 
 var server = net.createServer(function(socket){ // connection listener
     console.log('%d-%d-%d %d:%d',Y,m,d,H,M);
