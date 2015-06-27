@@ -24,5 +24,10 @@ var server = http.createServer(function(req,res){
                       jsonTime(date.getMinutes(strftime('%M'))) + ':'
                       jsonTime(date.getSeconds(strftime('%S'))) + '\n';
     var nowUnixTime = unixTime(date.getTime(strftime('%L')));
+    if(/^\/api\/parsetime/.test(path) ){
+        return jsonTime(date);
+    }else if(/^\/api\/unixtime/.test(path)){
+        return unixTime(date);
+    }
 });
 server.listen(Number(port));

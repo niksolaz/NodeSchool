@@ -9,7 +9,7 @@ var nowDate = date.getFullYear(strftime('%Y')) + '-'
               + now(date.getMonth(strftime('%m'))+ 1) + '-'
               + now(date.getDate(strftime('%d'))) + ' '
               + now(date.getHours(strftime('%H'))) + ':'
-              + now(date.getMinutes(strftime('M'))) + '\n';
+              + now(date.getMinutes(strftime('%M'))) + '\n';
 
 var server = net.createServer(function(socket){ // connection listener
    
