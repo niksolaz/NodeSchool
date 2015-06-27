@@ -12,20 +12,20 @@ function jsonTime(time){
     }
 }
 
-function unixTime(time){
-    return { unixtime: time.getTime()}
+function unixTime(date){
+    return {unixtime: date.getTime()};
 }
 
 var server = http.createServer(function(req,res){
     console.log('Connected');
     var path = url.parse(req.url,true);
-    var date = new Date(path.query.iso).toISOString();
+    var date = new Date(path.query.iso);
     var result;
     
-    if(/^\/api\/parsetime/.test(path) ){
-        return jsonTime(date);
-    }else if(/^\/api\/unixtime/.test(path)){
-        return unixTime(date);
+    if(/^\/api\/parsetime/.test(path.pathname) ){
+        result =  jsonTime(date);
+    }else if(/^\/api\/unixtime/.test(path.pathname)){
+        result = unixTime(date);
     }
     if (result) {
         res.writeHead(200, { 'Content-Type': 'application/json' })
