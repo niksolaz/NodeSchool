@@ -8,3 +8,7 @@ function jsonTime(time){
         second: time.getSeconds()
     }
 }
+
+function unixTime(time){
+    return { unixtime: time.getTime()}
+}
