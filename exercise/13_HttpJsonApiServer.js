@@ -15,7 +15,7 @@ function unixTime(time){
     return { unixtime: time.getTime()}
 }
 
-var server = http.createServer(req,res){
-    
-}
+var server = http.createServer(function(req,res){
+    console.log('Connected');
+});
 server.listen(Number(port));
