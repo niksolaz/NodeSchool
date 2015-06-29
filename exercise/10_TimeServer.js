@@ -1,17 +1,17 @@
-var net = require("net");
-var strftime = require("strftime")
-var portNumber = process.argv[2];
+var net = require("net");//The net module provides you with an asynchronous network wrapper.
+var strftime = require("strftime")//module strfile
+var portNumber = process.argv[2];// Proccess is an array containing the command line arguments.
 
 function now(x) { return x < 10 ? '0' + x:x}
 
-var date = new Date()
+var date = new Date() // time display
 var nowDate = date.getFullYear(strftime('%Y')) + '-'
               + now(date.getMonth(strftime('%m'))+ 1) + '-'
               + now(date.getDate(strftime('%d'))) + ' '
               + now(date.getHours(strftime('%H'))) + ':'
               + now(date.getMinutes(strftime('%M'))) + '\n';
 
-var server = net.createServer(function(socket){ // connection listener
+var server = net.createServer(function(socket){ // Connection listener. Creates a new TCP server.
    
     //socket handling logic
     socket.write('',date);
