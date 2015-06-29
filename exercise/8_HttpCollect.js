@@ -1,11 +1,12 @@
 
-var Http =  require('http');
-var bl = require("bl");
+var Http =  require('http'); // Module Http
+var bl = require("bl"); // Module Buffe List: bl is a storage object for collections of Node Buffers. 
 
-var Data = process.argv[2];
+var Data = process.argv[2];// Proccess is an array containing the command line arguments
 
-Http.get(Data,function(response){
+Http.get(Data,function(response){//Method request that calls req.end() automatically.
     response.setEncoding('utf8');
+//Pipe reads the data source and writes the destination without managing the stream alone.
     response.pipe(bl(function(err,data){
         if(err) throw err;
         console.log(data.length);
