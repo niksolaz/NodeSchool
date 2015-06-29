@@ -1,9 +1,9 @@
-var fs = require("fs");
+var fs = require("fs"); //Module fs
 
-var file = process.argv[2];
-var buf = fs.readFileSync(file,{encoding:'utf8'});
+var file = process.argv[2]; //Proccess is an array containing the command line arguments.
+var buf = fs.readFileSync(file,{encoding:'utf8'});// fs.readFileSYnc: returns the contents of the filename
 
-var str = buf.toString();
+var str = buf.toString(); //Content is a string
 console.log(str.split('\n').length - 1);
 
 // Test Passed!
