@@ -9,7 +9,7 @@ var server = http.createServer(function (req,res){// Create server
     console.log('Connected');
     
     var read = fs.createReadStream(file);//Returns a new ReadStream object (See Readable Stream).
-    read.pipe(res);////Pipe reads the data source and writes the destination without managing the stream alone.
+    read.pipe(res);//Pipe reads the data source and writes the destination without managing the stream alone.
 })
 server.listen(Number(port));//Port of the  server 
 
