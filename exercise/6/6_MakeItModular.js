@@ -1,5 +1,5 @@
 var filterFn = require('./mymodule.js') // Call  own module
-var dir = process.argv[2] // // Proccess is an array containing the command line arguments
+var dir = process.argv[2] // Proccess is an array containing the command line arguments
 /*The first element will be 'node', 
 the second element will be the name of the JavaScript file. 
 The next elements will be any additional command line argument.

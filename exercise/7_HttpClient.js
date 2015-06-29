@@ -1,10 +1,11 @@
-var Http = require("http");
+var Http = require("http"); //Call Module http
 
-var data = process.argv[2];
+var data = process.argv[2];// Proccess is an array containing the command line arguments
 
 Http.get(data,function (response) {
     response.setEncoding('utf8');
-    response.on('data',console.log);
+    // EventEmitter: Adds a listener to the end of the listeners array for the specified event.
+    response.on('data',console.log); 
     response.on('end',console.log);
     response.on('error',console.error);
 });
