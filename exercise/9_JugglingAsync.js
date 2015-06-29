@@ -1,8 +1,14 @@
-var http = require('http');
+var http = require('http');// Module http
+
+// Proccess is an array containing the command line arguments.
+/*The first element will be 'node', 
+the second element will be the name of the JavaScript file. 
+The next elements will be any additional command line argument.
+PROCESS.ARGV[NODE,FILE,ELEMENT,...ELEMENT..]*/
 var urls = [process.argv[2], process.argv[3], process.argv[4]];
 
-function printResponseData(urls, n){
-    if (n > urls.length-1){
+function printResponseData(urls, n){ // function recursive
+    if (n > urls.length-1){// Condition 
         return;
     }
     http.get(urls[n], function(res) {
